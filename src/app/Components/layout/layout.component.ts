@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, HostListener, OnInit, ViewChild } from '@angular/core';
+import { MatSidenav } from '@angular/material/sidenav';
 import { Router } from '@angular/router';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
 import { MenuService } from 'src/app/Services/menu.service';
@@ -9,7 +10,9 @@ import { Menu } from 'src/app/interfaces/menu';
   templateUrl: './layout.component.html',
   styleUrls: ['./layout.component.css']
 })
-export class LayoutComponent implements OnInit{
+export class LayoutComponent implements OnInit, AfterViewInit {
+
+  @ViewChild('sidenav') sidenav!: MatSidenav;
 
   listaMenus: Menu[]=[];
   correoUsuario: string = "";
@@ -35,6 +38,19 @@ export class LayoutComponent implements OnInit{
         error: (e) => {}
       })
     }
+  }
+
+  ngAfterViewInit() {
+    this.checkWindowSize();
+  }
+
+  checkWindowSize(): void {
+    this.sidenav.opened = window.innerWidth > 940;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: Event): void {
+    this.checkWindowSize();
   }
 
   cerrarSesion(){

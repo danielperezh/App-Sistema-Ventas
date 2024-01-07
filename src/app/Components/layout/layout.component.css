@@ -1,0 +1,67 @@
+/* Estilos generales */
+mat-toolbar {
+  background-color: #003366; /* Azul oscuro para la barra de herramientas */
+  color: #ffffff; /* Texto blanco para mayor contraste */
+}
+
+mat-sidenav {
+  background-color: #0A1F33; /* Fondo gris claro para el menú lateral */
+}
+
+.mat-list-base .mat-list-item {
+  color: #ffffff;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.mat-list-base:hover .mat-list-item:hover {
+  background-color: #003366; /* Cambia el fondo al azul oscuro en hover */
+  color: #ffffff; /* Cambia el color del texto a blanco en hover */
+}
+
+/* Estilos para los elementos en la barra de herramientas */
+mat-toolbar-row {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-right: 20px;
+}
+
+mat-icon-button {
+  color: #ffffff; /* Iconos blancos en la barra de herramientas */
+}
+
+/* Estilos para el contenido principal */
+mat-sidenav-container {
+  height: 100vh;
+}
+
+div[style="height: 90vh;"] {
+  padding: 16px; /* Añadir un relleno para evitar bordes pegados al contenido */
+}
+
+label {
+  font-size: 14px;
+  margin-right: 20px;
+}
+
+
+@media (max-width: 397px) {
+  h1 {
+    display: none;
+  }
+  label {
+    margin-right: 0px;
+    font-size: 13px;
+  }
+  .custom-sidenav {
+    position: absolute;
+    z-index: 5;
+  }
+  mat-sidenav-content{
+    display: none !important;
+    position: relative;
+  }
+}

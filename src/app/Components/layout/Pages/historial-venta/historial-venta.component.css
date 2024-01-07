@@ -20,3 +20,52 @@ table {
   width: 100%;
   font-size: 14px;
 }
+
+/* Estilos para hacer el formulario más responsivo */
+.full-width {
+  box-sizing: border-box;
+}
+
+.tabla-ventas td,
+.tabla-ventas th,
+.mat-row.mat-row,
+.mat-no-row {
+  padding: 6px; /* Ajusta el valor según el espacio deseado */
+}
+
+mat-card {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+
+h1 {
+  margin: 20px 0px 0px 40px;
+}
+
+
+@media (max-width: 397px) {
+  mat-card {
+    margin: 20px 10px;
+  }
+  h1 {
+    margin-left: 8px;
+  }
+  .full-width {
+    width: 100% !important;
+  }
+  .campos-formulario {
+    flex-direction: column;
+    align-items: center;
+  }
+  .mat-cell {
+    font-size: 12px;
+  }
+}
+
+
+
+
+

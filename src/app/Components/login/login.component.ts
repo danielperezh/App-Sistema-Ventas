@@ -28,7 +28,7 @@ export class LoginComponent {
     })
   }
 
-  inisiarSesion(){
+  iniciarSesion(){
     this.mostrarLoading = true;
     const request: Login = {
       correo: this.formularioLogin.value.email,
