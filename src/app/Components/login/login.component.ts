@@ -38,7 +38,7 @@ export class LoginComponent {
       next: (data) => {
         if(data.status){
           this._utilidadServicio.guardarSesionUsuario(data.value);
-          this.router.navigate(["pages"]);
+          this.router.navigate(["pages/dashboard"]);
         }else{
           this._utilidadServicio.mostarAlerta("No se encontraron coincidencias","Opps!");
         }

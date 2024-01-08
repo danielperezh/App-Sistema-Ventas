@@ -4,7 +4,7 @@
   justify-content: center;
   height: 100vh;
   align-items: center;
-  background-color: #003366ae;
+  background: linear-gradient(to bottom right, #003366, #004d80 50%, #006699);
 }
 
 .loginCard {

@@ -1,3 +1,4 @@
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Component, OnInit } from '@angular/core';
 
 import { Chart, registerables } from 'chart.js';
@@ -14,10 +15,28 @@ export class DashBoardComponent implements OnInit{
   totalIngresos: string = "0";
   totalVentas: string = "0";
   totalProductos: string = "0";
+  numCols: number = 3;
 
   constructor(
     private _dashboardServicio: DashBoardService,
-  ){}
+    private breakpointObserver: BreakpointObserver
+  ){
+    breakpointObserver.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge
+    ]).subscribe(result => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        this.numCols = 1;
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        this.numCols = 2;
+      } else if (result.breakpoints[Breakpoints.Medium]) {
+        this.numCols = 3;
+      }
+    });
+  }
 
   mostrarGrafico(labeGrafico: any[], dataGrafico: any[]){
     const chartBarras = new Chart('chartBarras',{

@@ -15,3 +15,103 @@ mat-form-field {
 table {
   width: 100%;
 }
+
+tr {
+  text-align: center;
+}
+
+table .mat-header-cell[_ngcontent-sme-c68] {
+  text-align: center !important;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+mat-card {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+
+h1 {
+  margin: 20px 0px 0px 40px;
+}
+
+.full-width {
+  width: auto;
+}
+
+.boton-excel {
+  margin-bottom: 1.34375em;
+}
+
+.mat-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.mat-header-cell,
+.mat-cell {
+  white-space: wrap; /* Evita que el texto se desborde */
+  overflow: hidden; /* Oculta el texto que no cabe en la celda */
+  text-overflow: ellipsis; /* Muestra puntos suspensivos (...) cuando el texto se corta */
+}
+
+@media (max-width: 753px) {
+  .boton-buscar{
+    margin-top: 0px;
+    margin-bottom: 1.34375em;
+  }
+  .boton-excel {
+    margin-bottom: 1.34375em;
+  }
+}
+
+@media (max-width: 651px) {
+  .full-width {
+    width: 100% !important;
+  }
+  .mat-header-cell,
+  .mat-cell {
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho de la celda */
+    width: 100%; /* Establece el ancho al 100% para ocupar todo el espacio disponible */
+    padding: 8px; /* Añade algún relleno para mejorar el aspecto */
+  }
+  .mat-cell {
+    max-width: 80px;
+    white-space: wrap;
+    text-overflow: ellipsis;
+  }
+  .mat-card {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 397px) {
+  mat-card {
+    margin: 20px 10px;
+  }
+  h1 {
+    margin-left: 8px;
+  }
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 10px;
+  }
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0px;
+  }
+  .mat-table {
+    overflow-x: scroll; /* Agrega un desplazamiento horizontal para pantallas pequeñas */
+  }
+
+  .mat-header-cell,
+  .mat-cell {
+    box-sizing: border-box; /* Incluye el borde y el relleno en el ancho de la celda */
+    width: 100%; /* Establece el ancho al 100% para ocupar todo el espacio disponible */
+    padding: 8px; /* Añade algún relleno para mejorar el aspecto */
+    font-size: 12px;
+  }
+}

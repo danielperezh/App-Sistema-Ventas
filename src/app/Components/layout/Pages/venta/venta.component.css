@@ -6,6 +6,32 @@ table {
   width: 100%;
 }
 
+
+.mat-grid-list-align-right {
+  justify-content: flex-end !important;
+}
+
+.mat-grid-tile-align-right {
+  display: flex;
+  justify-content: flex-end;
+  text-align: right;
+  margin-left: auto;
+  width: 100%; /* Asegura que el ancho del tile sea 100% */
+  box-sizing: border-box; /* Incluye padding y border en el ancho total */
+}
+
+tr {
+  text-align: center;
+}
+
+table .mat-header-cell[_ngcontent-sme-c68] {
+  text-align: center !important;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
 mat-card {
   margin-top: 20px;
   margin-right: 40px;
@@ -15,12 +41,6 @@ mat-card {
 
 h1 {
   margin: 20px 0px 0px 40px;
-}
-
-@media (max-width: 990px) {
-  .full-width {
-    width: 100% !important;
-  }
 }
 
 @media (max-width: 397px) {
@@ -35,4 +55,52 @@ h1 {
   }
 
 }
+
+/* Estilos para pantallas pequeñas */
+@media screen and (max-width: 600px) {
+   mat-grid-tile {
+    width: 100%;
+  }
+
+  mat-form-field {
+    width: 100%;
+    margin-left: 0;
+  }
+
+  mat-grid-tile:nth-child(3) {
+    margin-left: 0;
+  }
+
+  button {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+/* Estilos para .mat-grid-tile en pantallas pequeñas */
+@media screen and (max-width: 600px) {
+  .mat-grid-tile {
+    width: 100% !important;
+  }
+  .mat-form-field, button {
+    margin-left: 0px !important;
+  }
+  .spacio {
+    margin-right: 0px !important;
+  }
+}
+@media screen and (max-width: 961px) {
+  .mat-form-field, button {
+    margin-left: 0px !important;
+    gap: 20px;
+  }
+  .spacio {
+    margin-right: 40px;
+  }
+}
+
+
 

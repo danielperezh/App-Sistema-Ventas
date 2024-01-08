@@ -9,6 +9,7 @@ import { VentaService } from 'src/app/Services/venta.service';
 import { ProductoService } from 'src/app/Services/producto.service';
 import { UtilidadService } from 'src/app/Reutilizable/utilidad.service';
 import { Venta } from 'src/app/interfaces/venta';
+import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 
 @Component({
   selector: 'app-venta',
@@ -36,12 +37,14 @@ export class VentaComponent {
 
     return this.listaProductos.filter(item => item.nombre.toLocaleLowerCase().includes(valorBuscado));
   }
+  numCols: number = 3;
 
   constructor(
     private fb:FormBuilder,
     private _productosServicio: ProductoService,
     private _ventaServicio: VentaService,
-    private _utilidadServicio: UtilidadService
+    private _utilidadServicio: UtilidadService,
+    private breakpointObserver: BreakpointObserver
   ){
     this.formularioProductoVenta = this.fb.group({
       producto: ["",Validators.required],
@@ -61,6 +64,22 @@ export class VentaComponent {
     this.formularioProductoVenta.get("producto")?.valueChanges.subscribe(value => {
       this.listaProductosFiltro = this.retornarProductosPorFiltro(value);
     })
+
+    breakpointObserver.observe([
+      Breakpoints.XSmall,
+      Breakpoints.Small,
+      Breakpoints.Medium,
+      Breakpoints.Large,
+      Breakpoints.XLarge
+    ]).subscribe(result => {
+      if (result.breakpoints[Breakpoints.XSmall]) {
+        this.numCols = 1;
+      } else if (result.breakpoints[Breakpoints.Small]) {
+        this.numCols = 2;
+      } else if (result.breakpoints[Breakpoints.Medium]) {
+        this.numCols = 3;
+      }
+    });
   }
 
   mostrarProducto(producto: Producto): string{

@@ -1,6 +1,6 @@
-<h1 style="margin: 20px 0px 0px 40px;"> Reporte Venta </h1>
+<h1> Reporte Venta </h1>
 
-<mat-card style="margin: 20px 40px 40px 40px;">
+<mat-card>
 
   <mat-card-content>
 
@@ -8,28 +8,28 @@
 
       <div class="campos-formulario">
 
-        <mat-form-field appearance="fill">
+        <mat-form-field class="full-width" appearance="fill">
           <mat-label>Fecha Inicio</mat-label>
           <input matInput autocomplete="off" formControlName="fechaInicio" [matDatepicker]="picker1">
           <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
           <mat-datepicker #picker1></mat-datepicker>
         </mat-form-field>
 
-        <mat-form-field appearance="fill">
+        <mat-form-field class="full-width" appearance="fill">
           <mat-label>Fecha Fin</mat-label>
           <input matInput autocomplete="off" formControlName="fechaFin" [matDatepicker]="picker2">
           <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
           <mat-datepicker #picker2></mat-datepicker>
         </mat-form-field>
 
-        <button mat-raised-button color="primary" [disabled]="formularioFiltro.invalid" type="submit" class="boton-buscar">
+        <button mat-raised-button color="primary" [disabled]="formularioFiltro.invalid" type="submit" class="boton-buscar full-width">
           <mat-icon >search</mat-icon>Buscar
         </button>
 
       </div>
     </form>
 
-    <button mat-raised-button color="warn" [disabled]="listaVentasReporte.length < 1"  (click)="exportarExcel()">
+    <button mat-raised-button class="boton-excel full-width" color="warn" [disabled]="listaVentasReporte.length < 1"  (click)="exportarExcel()">
       <mat-icon >feed</mat-icon>Exportar Excel
     </button>
 

@@ -6,3 +6,92 @@ table {
   font-size: 14px;
   width: 100%;
 }
+
+tr {
+  text-align: center;
+}
+
+table .mat-header-cell[_ngcontent-sme-c68] {
+  text-align: center !important;
+}
+
+.mat-header-cell {
+  text-align: center;
+}
+
+mat-card {
+  margin-top: 20px;
+  margin-right: 40px;
+  margin-bottom: 40px;
+  margin-left: 40px;
+}
+
+
+h1 {
+  margin: 20px 0px 0px 40px;
+}
+
+
+.no-data-message {
+  padding: 10px;
+  text-align: center;
+  font-size: 14px;
+}
+
+.mat-table {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+td.mat-cell {
+  max-width: 200px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+
+@media screen and (max-width: 600px) {
+  .no-data-message {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 740px) {
+  .no-data-message {
+    font-size: 12px;
+  }
+  td.mat-cell {
+    max-width: 100px;
+    white-space: inherit;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 397px) {
+  mat-card {
+    margin: 20px 10px;
+  }
+  h1 {
+    margin-left: 8px;
+  }
+  .mat-cell {
+    font-size: 12px;
+    max-width: 80px;
+    white-space: wrap;
+    text-overflow: ellipsis;
+  }
+  th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:first-of-type {
+    padding-left: 10px;
+  }
+  th.mat-header-cell:last-of-type, td.mat-cell:last-of-type, td.mat-footer-cell:last-of-type {
+    padding-right: 0px;
+  }
+  .mat-card {
+    padding: 10px;
+  }
+}

@@ -14,7 +14,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
 
   @ViewChild('sidenav') sidenav!: MatSidenav;
 
-  listaMenus: Menu[]=[];
+  listaMenus: Menu[] = [];
   correoUsuario: string = "";
   rolUsuario: string = "";
 
@@ -22,26 +22,28 @@ export class LayoutComponent implements OnInit, AfterViewInit {
     private router: Router,
     private _menuServicio: MenuService,
     private _utilidadServicio: UtilidadService
-  ){}
+  ) { }
 
   ngOnInit(): void {
     const usuario = this._utilidadServicio.obetnerSesionUsuario();
 
-    if(usuario != null){
+    if (usuario != null) {
       this.correoUsuario = usuario.correo;
       this.rolUsuario = usuario.rolDescripcion;
 
       this._menuServicio.lista(usuario.idUsuario).subscribe({
         next: (data) => {
-          if(data.status) this.listaMenus = data.value;
+          if (data.status) this.listaMenus = data.value;
         },
-        error: (e) => {}
+        error: (e) => { }
       })
     }
   }
 
   ngAfterViewInit() {
-    this.checkWindowSize();
+    setTimeout(() => {
+      this.checkWindowSize();
+    });
   }
 
   checkWindowSize(): void {
@@ -53,7 +55,7 @@ export class LayoutComponent implements OnInit, AfterViewInit {
     this.checkWindowSize();
   }
 
-  cerrarSesion(){
+  cerrarSesion() {
     this._utilidadServicio.eliminarSesionUsuario();
     this.router.navigate(["login"]);
   }

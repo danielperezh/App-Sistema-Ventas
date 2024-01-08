@@ -36,12 +36,9 @@ h1 {
   }
 }
 
-/* .mat-grid-list.responsive-grid {
-  @media (min-width: 397px) {
-    cols: 2;
+@media screen and (max-width: 600px) {
+  .mat-card-actions, .mat-card-subtitle, .mat-card-content {
+    margin-bottom: 0px;
   }
+}
 
-  @media (min-width: 600px) {
-    cols: 3;
-  }
-} */
